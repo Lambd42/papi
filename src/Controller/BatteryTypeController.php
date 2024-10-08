@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Request;
 class BatteryTypeController extends AbstractController
 {
 
-    #[Route('/liste-typebatterie', name: 'app_batteryTypesList')]
+    #[Route('/admin-liste-typebatterie', name: 'app_batteryTypesList')]
     public function batteryTypesList(BatteryTypeRepository $batteryTypeRepository): Response
     {
         $batteryTypes = $batteryTypeRepository->findAll();
