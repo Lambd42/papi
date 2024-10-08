@@ -20,7 +20,7 @@
                         <tbody>
                             {% for batteryType in batteryTypes %}
                                 <tr class="{{ cycle(['table-primary','table-secondary'], loop.index0) }}">
-                                    <td>{{ batteryType.reference}}</td>
+                                    <td>{{ batteryType.reference | upper }}</td>
                                     <td>{{ batteryType.capacity}}</td>
                                     <td>{{ batteryType.country | capitalize }}</td>
                                 </tr>
@@ -30,7 +30,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 
 {% endblock %}
