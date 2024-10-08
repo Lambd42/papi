@@ -3,5 +3,34 @@
 {% block title %}{{parent()}}Types de batterie{% endblock %}
 
 {% block body %}
-    <h1 class="text-center text-primary mt-4 pt-4 display-1 fw-bold">Types de batterie</h1>
+    <div class="container-fluid">
+        <h1 class="text-center text-primary mt-4 pt-4 display-1 fw-bold">Types de batterie</h1>
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 bg-white p-4 m-0 text-primary">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr class="fw-bold text-primary">
+                                <th scope="col">Référence</th>
+                                <th scope="col">Capacité (Wh)</th>
+                                <th scope="col">Pays d'origine</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for batteryType in batteryTypes %}
+                                <tr class="{{ cycle(['table-primary','table-secondary'], loop.index0) }}">
+                                    <td>{{ batteryType.reference}}</td>
+                                    <td>{{ batteryType.capacity}}</td>
+                                    <td>{{ batteryType.country | capitalize }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
 {% endblock %}
