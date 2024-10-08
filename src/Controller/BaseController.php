@@ -15,4 +15,12 @@ class BaseController extends AbstractController
             'controller_name' => 'BaseController',
         ]);
     }
+
+    #[Route('/liste-typebatterie', name: 'app_batteryTypesList')]
+    public function batteryTypesList(): Response
+    {
+        return $this->render('base/batteryTypesList.html.twig', [
+            'controller_name' => 'BaseController',
+        ]);
+    }
 }
